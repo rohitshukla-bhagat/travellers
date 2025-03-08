@@ -1,0 +1,44 @@
+<% layout("/layouts/commonPage.ejs") %>
+<div class="formContainer">
+  <h3>SignUp with Travellers</h3>
+  <form action="/signup" method="POST" novalidate class="needs-validation">
+    <div class="mb-3">
+      <label for="title" class="form-label">Username</label>
+      <input
+        type="text"
+        name="username"
+        id="username"
+        class="form-control signUpInputs"
+        required
+      />
+      <div class="invalid-feedback formErrors">
+        Username Should Be Required !
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="title" class="form-label">Email</label>
+      <input
+        type="email"
+        name="email"
+        id="email"
+        class="form-control signUpInputs"
+        required
+      />
+      <div class="invalid-feedback formErrors">Email Should Be Required !</div>
+    </div>
+    <div class="mb-3">
+      <label for="title" class="form-label">Password</label>
+      <input
+        type="password"
+        name="password"
+        id="password"
+        class="form-control signUpInputs"
+        required
+      />
+      <div class="invalid-feedback formErrors">
+        Password Should Be Required !
+      </div>
+    </div>
+    <button class="btn btn-success">SignUp</button>
+  </form>
+</div>

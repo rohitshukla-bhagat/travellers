@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-md bg-body-white sticky-top">
+  <div class="container-fluid mainNav">
+    <a class="navbar-brand navComName" href="/listings">Travellers</a>
+    <button
+      class="navbar-toggler navBtn"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/listings?filter=all">Explore</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <form class="d-flex" role="search" action="/listings?filter=search" method="GET">
+            <input
+              class="form-control me-2 navSearch"
+              type="search"
+              name="search"
+              placeholder="Search Destination"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success navSearchBtn" type="submit">
+              Search
+            </button>
+          </form>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/listings/new">Contribute</a>
+        </li>
+        <% if(!currUser) {%>
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/signup">SignUp</a>
+        </li>
+        <%}%> <% if(currUser) {%>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Logout</a>
+        </li>
+        <%}%>
+      </ul>
+    </div>
+  </div>
+</nav>

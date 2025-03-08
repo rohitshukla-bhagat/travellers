@@ -1,0 +1,92 @@
+<% layout("/layouts/commonPage.ejs") %>
+<body>
+  <div class="updateContainer">
+    <h3>Update Your List</h3>
+    <form
+      method="post"
+      action="/listings/<%= list.id %>?_method=PUT"
+      novalidate
+      class="needs-validation"
+      enctype="multipart/form-data"
+    >
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input
+          type="text"
+          value="<%=list.title%>"
+          name="listing[title]"
+          class="form-control"
+          required
+        />
+        <div class="invalid-feedback formErrors">
+          Title Should Be Required !
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea
+          name="listing[description]"
+          id="des"
+          class="form-control"
+          required
+        >
+<%=list.description%></textarea
+        >
+        <div class="invalid-feedback formErrors">
+          Description Should Be Required !
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="price" class="form-label">Price</label>
+        <input
+          value="<%=list.price%>"
+          name="listing[price]"
+          class="form-control"
+          required
+        />
+        <div class="invalid-feedback formErrors">
+          Price Should Be Required !
+        </div>
+      </div>
+      <div class="mb-3">
+        <p>Original Image </p>
+        <img src="<%= originalUrl %>" alt="image" />
+      </div>
+      <div class="mb-3">
+        <label for="image" class="form-label">Upload New Image</label>
+        <input
+          type="file"
+          name="listing[image]"
+          class="form-control"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="location" class="form-label">Location</label>
+        <input
+          type="text"
+          value="<%=list.location%>"
+          name="listing[location]"
+          class="form-control"
+          required
+        />
+        <div class="invalid-feedback formErrors">
+          Location Should Be Required !
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="country" class="form-label">Country</label>
+        <input
+          type="text"
+          value="<%=list.country%>"
+          name="listing[country]"
+          class="form-control"
+          required
+        />
+        <div class="invalid-feedback formErrors">
+          Country Should Be Required !
+        </div>
+      </div>
+      <button type="submit" class="updateBtn">Update</button>
+    </form>
+  </div>
+</body>

@@ -1,0 +1,120 @@
+<% layout("/layouts/commonPage.ejs") %>
+<body>
+  <div class="formContainer">
+    <h3>Create New List</h3>
+    <form
+      action="/listings"
+      method="POST"
+      novalidate
+      class="needs-validation"
+      enctype="multipart/form-data"
+    >
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input
+          type="text"
+          name="listing[title]"
+          placeholder="Enter The Title"
+          class="form-control"
+          required
+        />
+        <div class="invalid-feedback formErrors">
+          Title Should Be Required !
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Desciption</label>
+        <textarea
+          name="listing[description]"
+          id="des"
+          placeholder="Enter The Description"
+          class="form-control"
+          required
+        ></textarea>
+        <div class="invalid-feedback formErrors">
+          Description Should Be Required !
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="price" class="form-label">Price</label>
+        <input
+          name="listing[price]"
+          placeholder="Enter The Price"
+          class="form-control"
+          required
+        />
+        <div class="invalid-feedback formErrors">
+          Price Should Be Required !
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="image" class="form-label">Upload Image</label>
+        <input
+          type="file"
+          name="listing[image]"
+          class="form-control"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="category" class="form-label">Category</label>
+        <select
+          name="listing[category]"
+          class="form-select"
+          required
+        >
+          <option value="" selected disabled>Select The Category</option>
+          <option value="Rooms">Rooms</option>
+          <option value="Luxe">Luxe</option>
+          <option value="City">City</option>
+          <option value="Mountain">Mountain</option>
+          <option value="Desert">Desert</option>
+          <option value="Boats">Boats</option>
+          <option value="Tower">Tower</option>
+          <option value="Castles">Castles</option>
+          <option value="Beach">Beach</option>
+          <option value="Pools">Pools</option>
+          <option value="LakeFront">LakeFront</option>
+          <option value="Skiing">Skiing</option>
+          <option value="Tree">Tree</option>
+          <option value="Cloudy">Cloudy</option>
+          <option value="Moisture">Moisture</option>
+          <option value="Rich">Rich</option>
+          <option value="Poor">Poor</option>
+          <option value="Nature">Nature</option>
+          <option value="Igloo">Igloo</option>
+          <option value="Children">Children</option>
+        </select>
+        <div class="invalid-feedback formErrors">
+          Category Should Be Required !
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="location" class="form-label">Location</label>
+        <input
+          type="text"
+          name="listing[location]"
+          placeholder="Enter The Location"
+          class="form-control"
+          required
+        />
+        <div class="invalid-feedback formErrors">
+          Location Should Be Required !
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="country" class="form-label">Country</label>
+        <input
+          type="text"
+          name="listing[country]"
+          placeholder="Enter The Country"
+          class="form-control"
+          required
+        />
+        <div class="invalid-feedback formErrors">
+          Country Should Be Required !
+        </div>
+      </div>
+      <button class="formBtn">Add</button>
+    </form>
+  </div>
+</body>

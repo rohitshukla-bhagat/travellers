@@ -1,0 +1,101 @@
+<% layout("/layouts/commonPage.ejs") %>
+<body>
+  <div class="listingsContainer">
+    <div class="filters">
+      <a class="filter" href="/listings?filter=Rooms">
+        <i class="fa-solid fa-bed"></i>
+        <p>Rooms</p>
+      </a>
+      <a class="filter" href="/listings?filter=Luxe">
+        <i class="fa-solid fa-bell-concierge"></i>
+        <p>Luxe</p>
+      </a>
+      <a class="filter" href="/listings?filter=City">
+        <i class="fa-solid fa-city"></i>
+        <p>City</p>
+      </a>
+      <a class="filter" href="/listings?filter=Mountain">
+        <i class="fa-solid fa-mountain-sun"></i>
+        <p>Mountain</p>
+      </a>
+      <a class="filter" href="/listings?filter=Desert">
+        <i class="fa-solid fa-stroopwafel"></i>
+        <p>Desert</p>
+      </a>
+      <a class="filter" href="/listings?filter=Boat">
+        <i class="fa-solid fa-sailboat"></i>
+        <p>Boat</p>
+      </a>
+      <a class="filter" href="/listings?filter=Tower">
+        <i class="fa-solid fa-tower-observation"></i>
+        <p>Tower</p>
+      </a>
+      <a class="filter" href="/listings?filter=Castles">
+        <i class="fa-solid fa-chess-rook"></i>
+        <p>Castles</p>
+      </a>
+      <a class="filter" href="/listings?filter=Beach">
+        <i class="fa-solid fa-umbrella-beach"></i>
+        <p>Beach</p>
+      </a>
+      <a class="filter" href="/listings?filter=Pools">
+        <i class="fa-solid fa-person-swimming"></i>
+        <p>Pools</p>
+      </a>
+      <a class="filter" href="/listings?filter=Lakefront">
+        <i class="fa-solid fa-water"></i>
+        <p>LakeFront</p>
+      </a>
+      <a class="filter" href="/listings?filter=Skiing">
+        <i class="fa-solid fa-person-skiing"></i>
+        <p>Skiing</p>
+      </a>
+      <a class="filter" href="/listings?filter=Tree">
+        <i class="fa-solid fa-tree-city"></i>
+        <p>Tree</p>
+      </a>
+      <a class="filter" href="/listings?filter=Cloudy">
+        <i class="fa-solid fa-cloud"></i>
+        <p>Cloudy</p>
+      </a>
+      <a class="filter" href="/listings?filter=Moisture">
+        <i class="fa-solid fa-umbrella"></i>
+        <p>Moisture</p>
+      </a>
+      <a class="filter" href="/listings?filter=Rich">
+        <i class="fa-solid fa-hotel"></i>
+        <p>Rich</p>
+      </a>
+      <a class="filter" href="/listings?filter=Poor">
+        <i class="fa-solid fa-house"></i>
+        <p>Poor</p>
+      </a>
+      <a class="filter" href="/listings?filter=Nature">
+        <i class="fa-solid fa-leaf"></i>
+        <p>Nature</p>
+      </a>
+      <a class="filter" href="/listings?filter=Igloo">
+        <i class="fa-solid fa-igloo"></i>
+        <p>Igloo</p>
+      </a>
+      <a class="filter" href="/listings?filter=Children">
+        <i class="fa-solid fa-child"></i>
+        <p>Children</p>
+      </a>
+    </div>
+    <ul>
+      <% for(let listing of allListings) {%>
+      <div class="card indexCrds">
+        <img src="<%= listing.image.url %>" class="card-img-top" alt="placeImage" />
+        <div class="card-body">
+          <h5 class="card-title"><%= listing.title %></h5>
+          <p class="card-text">
+            &#8377; <%= Number(listing.price).toLocaleString("en-IN") %>/night
+          </p>
+          <a href="/listings/<%=listing.id%>" class="btn cardBtn">View</a>
+        </div>
+      </div>
+      <%}%>
+    </ul>
+  </div>
+</body>
